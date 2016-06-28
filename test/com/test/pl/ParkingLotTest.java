@@ -13,12 +13,6 @@ import org.junit.Test;
  */
 public class ParkingLotTest {
 
-//    @Test
-//    public void shouldAbleToParkCar() {
-//        Car car = new Car();
-//        Assert.assertTrue(car.park());
-//    }
-
     @Test
     public void shouldGetParkingTokenOnceParked() throws ParkingLotFullException {
         ParkingLot parkingLot = new ParkingLot(10);
@@ -31,6 +25,7 @@ public class ParkingLotTest {
         parkingLot.park();
         Assert.assertNull(parkingLot.park());
     }
+
     public void shouldBeAbleToUnparkIfHaveToken() throws ParkingLotFullException, InvalidToken {
 
         ParkingLot parkingLot = new ParkingLot(1);
@@ -39,7 +34,7 @@ public class ParkingLotTest {
 
     }
 
-    @Test(expected =  InvalidToken.class)
+    @Test(expected = InvalidToken.class)
     public void shouldNotAllowToUnParkIfEmptyToken() throws ParkingLotFullException, InvalidToken {
         ParkingLot parkingLot = new ParkingLot(1);
         Token token = parkingLot.park();
